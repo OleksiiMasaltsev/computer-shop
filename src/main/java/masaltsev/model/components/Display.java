@@ -1,10 +1,18 @@
-package masaltsev.model;
+package masaltsev.model.components;
 
-import masaltsev.model.abstr.Component;
+import java.math.BigDecimal;
+import masaltsev.model.Component;
 
 public class Display extends Component {
     private int screenSize;
     private DisplayType displayType;
+
+    public Display(String brand, String model, int screenSize,
+                   DisplayType displayType, BigDecimal price) {
+        super(brand, model, price);
+        this.screenSize = screenSize;
+        this.displayType = displayType;
+    }
 
     enum DisplayType {
         IPS,
