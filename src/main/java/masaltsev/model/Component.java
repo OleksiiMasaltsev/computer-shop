@@ -1,4 +1,4 @@
-package masaltsev.model.abstr;
+package masaltsev.model;
 
 import java.math.BigDecimal;
 
@@ -6,6 +6,12 @@ public abstract class Component {
     private String brand;
     private String model;
     private BigDecimal price;
+
+    public Component(String brand, String model, BigDecimal price) {
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+    }
 
     public String getBrand() {
         return brand;

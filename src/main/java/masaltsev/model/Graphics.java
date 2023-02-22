@@ -1,9 +1,14 @@
 package masaltsev.model;
 
-import masaltsev.model.abstr.Component;
+import java.math.BigDecimal;
 
 public class Graphics extends Component {
     private int capacity;
+
+    public Graphics(String brand, String model, int capacity, BigDecimal price) {
+        super(brand, model, price);
+        this.capacity = capacity;
+    }
 
     public int getCapacity() {
         return capacity;

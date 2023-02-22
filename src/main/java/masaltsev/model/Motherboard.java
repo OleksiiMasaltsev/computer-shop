@@ -1,24 +1,31 @@
 package masaltsev.model;
 
-import masaltsev.model.abstr.Component;
+import java.math.BigDecimal;
 
 public class Motherboard extends Component {
-    private SocketType socketType;
-    private RamType ramType;
+    private Processor.SocketType socketType;
+    private Ram.RamType ramType;
 
-    public SocketType getSocketType() {
+    public Motherboard(String brand, String model, Processor.SocketType socketType,
+                       Ram.RamType ramType, BigDecimal price) {
+        super(brand, model, price);
+        this.socketType = socketType;
+        this.ramType = ramType;
+    }
+
+    public Processor.SocketType getSocketType() {
         return socketType;
     }
 
-    public void setSocketType(SocketType socketType) {
+    public void setSocketType(Processor.SocketType socketType) {
         this.socketType = socketType;
     }
 
-    public RamType getRamType() {
+    public Ram.RamType getRamType() {
         return ramType;
     }
 
-    public void setRamType(RamType ramType) {
+    public void setRamType(Ram.RamType ramType) {
         this.ramType = ramType;
     }
 }

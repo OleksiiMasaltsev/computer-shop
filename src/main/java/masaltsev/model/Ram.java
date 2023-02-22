@@ -1,10 +1,21 @@
 package masaltsev.model;
 
-import masaltsev.model.abstr.Component;
+import java.math.BigDecimal;
 
 public class Ram extends Component {
     private int capacity;
     private RamType ramType;
+
+    public Ram(String brand, String model, int capacity, RamType ramType, BigDecimal price) {
+        super(brand, model, price);
+        this.capacity = capacity;
+        this.ramType = ramType;
+    }
+
+    enum RamType {
+        DDR4,
+        DDR5
+    }
 
     public int getCapacity() {
         return capacity;

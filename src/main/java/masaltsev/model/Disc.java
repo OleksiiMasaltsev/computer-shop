@@ -1,10 +1,16 @@
 package masaltsev.model;
 
-import masaltsev.model.abstr.Component;
+import java.math.BigDecimal;
 
 public class Disc extends Component {
     private int capacity;
     private DiscType discType;
+
+    public Disc(String brand, String model, int capacity, DiscType discType, BigDecimal price) {
+        super(brand, model, price);
+        this.capacity = capacity;
+        this.discType = discType;
+    }
 
     enum DiscType {
         HDD,
