@@ -1,7 +1,6 @@
-package masaltsev.model.components;
+package masaltsev.model;
 
 import java.math.BigDecimal;
-import masaltsev.model.Component;
 
 public class Chassis extends Component {
     private ChassisType chassisType;

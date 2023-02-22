@@ -1,7 +1,6 @@
-package masaltsev.model.components;
+package masaltsev.model;
 
 import java.math.BigDecimal;
-import masaltsev.model.Component;
 
 public class Motherboard extends Component {
     private Processor.SocketType socketType;

@@ -1,56 +1,19 @@
 package masaltsev.model;
 
 import java.util.List;
-import masaltsev.model.components.Chassis;
-import masaltsev.model.components.Disc;
-import masaltsev.model.components.Motherboard;
-import masaltsev.model.components.Processor;
-import masaltsev.model.components.Ram;
 
-public abstract class Computer {
-    private Motherboard motherboard;
-    private Chassis chassis;
-    private List<Processor> processors;
-    private List<Disc> discs;
-    private List<Ram> rams;
+public class Computer {
+    private List<Component> components;
 
-    public Motherboard getMotherboard() {
-        return motherboard;
+    public Computer(List<Component> components) {
+        this.components = components;
     }
 
-    public void setMotherboard(Motherboard motherboard) {
-        this.motherboard = motherboard;
+    public List<Component> getComponents() {
+        return components;
     }
 
-    public Chassis getaCase() {
-        return chassis;
-    }
-
-    public void setaCase(Chassis chassis) {
-        this.chassis = chassis;
-    }
-
-    public List<Processor> getProcessors() {
-        return processors;
-    }
-
-    public void setProcessors(List<Processor> processors) {
-        this.processors = processors;
-    }
-
-    public List<Disc> getDiscs() {
-        return discs;
-    }
-
-    public void setDiscs(List<Disc> discs) {
-        this.discs = discs;
-    }
-
-    public List<Ram> getRams() {
-        return rams;
-    }
-
-    public void setRams(List<Ram> rams) {
-        this.rams = rams;
+    public void setComponents(List<Component> components) {
+        this.components = components;
     }
 }

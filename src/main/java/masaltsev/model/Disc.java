@@ -1,7 +1,6 @@
-package masaltsev.model.components;
+package masaltsev.model;
 
 import java.math.BigDecimal;
-import masaltsev.model.Component;
 
 public class Disc extends Component {
     private int capacity;
