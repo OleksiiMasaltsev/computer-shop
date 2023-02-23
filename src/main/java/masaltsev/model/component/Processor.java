@@ -1,4 +1,4 @@
-package masaltsev.model;
+package masaltsev.model.component;
 
 import java.math.BigDecimal;
 

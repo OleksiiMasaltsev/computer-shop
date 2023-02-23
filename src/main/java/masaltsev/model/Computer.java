@@ -1,5 +1,6 @@
 package masaltsev.model;
 
+import masaltsev.model.component.Component;
 import java.util.List;
 
 public class Computer {
