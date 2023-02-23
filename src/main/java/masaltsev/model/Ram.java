@@ -12,7 +12,7 @@ public class Ram extends Component {
         this.ramType = ramType;
     }
 
-    enum RamType {
+    public enum RamType {
         DDR4,
         DDR5
     }

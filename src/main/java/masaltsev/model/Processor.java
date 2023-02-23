@@ -10,7 +10,7 @@ public class Processor extends Component {
         this.socketType = socketType;
     }
 
-    enum SocketType {
+    public enum SocketType {
         LGA1200,
         LGA1700,
         LGA4189,

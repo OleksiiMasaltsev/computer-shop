@@ -1,8 +1,8 @@
 package masaltsev.db;
 
-import masaltsev.model.Component;
 import java.util.HashMap;
 import java.util.Map;
+import masaltsev.model.Component;
 
 public enum ComponentStorage {
     INSTANCE;

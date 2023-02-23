@@ -18,7 +18,7 @@ public class Chassis extends Component {
         this.chassisType = chassisType;
     }
 
-    enum ChassisType {
+    public enum ChassisType {
         MINI_ITX,
         MICRO_ATX,
         ATX,

@@ -12,7 +12,7 @@ public class Disc extends Component {
         this.discType = discType;
     }
 
-    enum DiscType {
+    public enum DiscType {
         HDD,
         SSD
     }
