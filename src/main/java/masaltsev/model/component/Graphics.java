@@ -17,4 +17,33 @@ public class Graphics extends Component {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Graphics graphics = (Graphics) o;
+        return capacity == graphics.capacity;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + capacity;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Graphics "
+                + "capacity: " + capacity + ", "
+                + super.toString();
+    }
 }

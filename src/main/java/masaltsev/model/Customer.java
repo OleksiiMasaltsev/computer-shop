@@ -1,11 +1,17 @@
 package masaltsev.model;
 
-import masaltsev.model.component.Component;
+import java.util.ArrayList;
 import java.util.List;
+import masaltsev.model.component.Component;
 
 public class Customer {
     private String name;
-    private Cart cart;
+    private List<Component> cart;
+
+    public Customer(String name) {
+        this.name = name;
+        cart = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
@@ -15,23 +21,11 @@ public class Customer {
         this.name = name;
     }
 
-    public Cart getCart() {
+    public List<Component> getCart() {
         return cart;
     }
 
-    public void setCart(Cart cart) {
+    public void setCart(List<Component> cart) {
         this.cart = cart;
-    }
-
-    static class Cart {
-        private List<Component> products;
-
-        public List<Component> getProducts() {
-            return products;
-        }
-
-        public void setProducts(List<Component> products) {
-            this.products = products;
-        }
     }
 }

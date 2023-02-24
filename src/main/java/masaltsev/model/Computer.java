@@ -1,7 +1,7 @@
 package masaltsev.model;
 
-import masaltsev.model.component.Component;
 import java.util.List;
+import masaltsev.model.component.Component;
 
 public class Computer {
     private List<Component> components;

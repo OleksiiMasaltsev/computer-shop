@@ -26,4 +26,33 @@ public class Processor extends Component {
     public void setSocketType(SocketType socketType) {
         this.socketType = socketType;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Processor processor = (Processor) o;
+        return socketType == processor.socketType;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (socketType != null ? socketType.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Processor "
+                + "socketType: " + socketType + ", "
+                + super.toString();
+    }
 }

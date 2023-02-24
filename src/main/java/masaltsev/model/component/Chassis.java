@@ -24,4 +24,33 @@ public class Chassis extends Component {
         ATX,
         E_ATX
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Chassis chassis = (Chassis) o;
+        return chassisType == chassis.chassisType;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (chassisType != null ? chassisType.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Chassis "
+                + "type: " + chassisType + ", "
+                + super.toString();
+    }
 }
