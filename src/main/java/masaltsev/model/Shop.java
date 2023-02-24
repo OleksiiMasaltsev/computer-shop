@@ -1,6 +1,7 @@
 package masaltsev.model;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import masaltsev.model.component.Chassis;
@@ -65,26 +66,11 @@ public class Shop {
         Ram ram2 = new Ram("G.Skill", "mod2", 32000, Ram.RamType.DDR5, BigDecimal.valueOf(260));
         Ram ram3 = new Ram("Goodram", "mod3", 16000, Ram.RamType.DDR4, BigDecimal.valueOf(45));
 
-        storage.add(chassis1);
-        storage.add(chassis2);
-        storage.add(chassis3);
-        storage.add(disc1);
-        storage.add(disc2);
-        storage.add(disc3);
-        storage.add(disc4);
-        storage.add(graphics1);
-        storage.add(graphics2);
-        storage.add(graphics3);
-        storage.add(graphics4);
-        storage.add(motherboard1);
-        storage.add(motherboard2);
-        storage.add(motherboard3);
-        storage.add(processor1);
-        storage.add(processor2);
-        storage.add(processor3);
-        storage.add(processor4);
-        storage.add(ram1);
-        storage.add(ram2);
-        storage.add(ram3);
+        storage.addAll(Arrays.asList(chassis1, chassis2, chassis3));
+        storage.addAll(Arrays.asList(disc1, disc1, disc1, disc4));
+        storage.addAll(Arrays.asList(graphics1, graphics2, graphics3, graphics4));
+        storage.addAll(Arrays.asList(motherboard1, motherboard2, motherboard3));
+        storage.addAll(Arrays.asList(processor1, processor2, processor3, processor4));
+        storage.addAll(Arrays.asList(ram1, ram2, ram3));
     }
 }
