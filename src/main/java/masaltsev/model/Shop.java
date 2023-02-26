@@ -61,10 +61,6 @@ public class Shop {
     }
 
     public BigDecimal calculatePrice(Customer customer) {
-        List<String> cartList = customer.getCart().stream()
-                .map(Component::toString)
-                .toList();
-        ChatBot.displayList(cartList);
         return customer.getCart().stream()
                 .map(Component::getPrice)
                 .reduce(BigDecimal::add)
