@@ -51,10 +51,13 @@ public class Shop {
                 ChatBot.askRepeat();
             }
             if (index != -1) {
-                customer.getCart().add(components.get(index));
-                storage.remove(index);
+                Component component = components.get(index);
+                customer.getCart().add(component);
+                storage.remove(component);
             }
         }
+        ChatBot.displayList(customer.getCart().stream().map(Component::toString).toList());
+        ChatBot.showPriceAndSayBye(calculatePrice(customer));
     }
 
     public BigDecimal calculatePrice(Customer customer) {

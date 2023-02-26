@@ -5,8 +5,8 @@ import java.util.List;
 import masaltsev.model.component.Component;
 
 public class Customer {
+    private final List<Component> cart;
     private String name;
-    private List<Component> cart;
 
     public Customer(String name) {
         this.name = name;
@@ -23,9 +23,5 @@ public class Customer {
 
     public List<Component> getCart() {
         return cart;
-    }
-
-    public void setCart(List<Component> cart) {
-        this.cart = cart;
     }
 }

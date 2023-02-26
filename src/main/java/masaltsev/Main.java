@@ -6,12 +6,11 @@ import masaltsev.util.ChatBot;
 
 public class Main {
     public static void main(String[] args) {
-        Shop shop;
-        Customer customer;
-        if (ChatBot.askToStart().equals("1")) {
-            shop = new Shop();
-            customer = new Customer(ChatBot.askNameAndSayHello());
-            shop.beginShopping(customer);
+        String input = ChatBot.askToStart();
+        if (input.equals("1")) {
+            String name = ChatBot.askNameAndSayHello();
+            Customer customer = new Customer(name);
+            new Shop().beginShopping(customer);
         }
     }
 }

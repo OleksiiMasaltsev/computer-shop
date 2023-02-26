@@ -3,19 +3,19 @@ package masaltsev.model.component;
 import java.math.BigDecimal;
 
 public class Graphics extends Component {
-    private int capacity;
+    private int memorySize;
 
-    public Graphics(String brand, String model, int capacity, BigDecimal price) {
+    public Graphics(String brand, String model, int memorySize, BigDecimal price) {
         super(brand, model, price);
-        this.capacity = capacity;
+        this.memorySize = memorySize;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public int getMemorySize() {
+        return memorySize;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setMemorySize(int memorySize) {
+        this.memorySize = memorySize;
     }
 
     @Override
@@ -30,20 +30,20 @@ public class Graphics extends Component {
             return false;
         }
         Graphics graphics = (Graphics) o;
-        return capacity == graphics.capacity;
+        return memorySize == graphics.memorySize;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + capacity;
+        result = 31 * result + memorySize;
         return result;
     }
 
     @Override
     public String toString() {
         return "Graphics "
-                + "capacity: " + capacity + ", "
+                + "capacity: " + memorySize + ", "
                 + super.toString();
     }
 }
