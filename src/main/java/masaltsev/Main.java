@@ -1,12 +1,20 @@
 package masaltsev;
 
+import java.util.LinkedList;
+import masaltsev.dao.ShopDao;
+import masaltsev.dao.ShopDaoImpl;
+import masaltsev.db.Storage;
 import masaltsev.model.Customer;
-import masaltsev.model.Shop;
 import masaltsev.service.PrintService;
-import masaltsev.util.ChatBot;
+import masaltsev.service.ShopService;
+import masaltsev.service.ShopServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
+        ShopDao shopDao = new ShopDaoImpl(new Storage(new LinkedList<>()));
         PrintService printService = new PrintService();
+        Customer customer = new Customer();
+        ShopService shopService = new ShopServiceImpl(customer, shopDao, printService);
+        shopService.beginShopping();
     }
 }

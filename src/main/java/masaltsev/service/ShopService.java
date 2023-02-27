@@ -5,6 +5,10 @@ import masaltsev.model.component.Component;
 
 public interface ShopService {
     void save(Component component);
+
     List<Component> getAll();
+
     void remove(Component component);
+
+    void beginShopping();
 }

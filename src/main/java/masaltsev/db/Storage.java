@@ -65,12 +65,12 @@ public class Storage {
         Ram ram2 = new Ram("G.Skill", "mod2", 32000, Ram.RamType.DDR5, BigDecimal.valueOf(260));
         Ram ram3 = new Ram("Goodram", "mod3", 16000, Ram.RamType.DDR4, BigDecimal.valueOf(45));
 
-        components.addAll(Arrays.asList(chassis1, chassis2, chassis3));
-        components.addAll(Arrays.asList(disc1, disc2, disc3, disc4));
-        components.addAll(Arrays.asList(graphics1, graphics2, graphics3, graphics4));
-        components.addAll(Arrays.asList(motherboard1, motherboard2, motherboard3));
+//        components.addAll(Arrays.asList(chassis1, chassis2, chassis3));
+//        components.addAll(Arrays.asList(disc1, disc2, disc3, disc4));
+//        components.addAll(Arrays.asList(graphics1, graphics2, graphics3, graphics4));
+//        components.addAll(Arrays.asList(motherboard1, motherboard2, motherboard3));
         components.addAll(Arrays.asList(processor1, processor2, processor3, processor4));
-        components.addAll(Arrays.asList(ram1, ram2, ram3));
+//        components.addAll(Arrays.asList(ram1, ram2, ram3));
 
         return components;
     }

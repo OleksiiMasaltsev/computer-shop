@@ -8,8 +8,7 @@ public class Customer {
     private final List<Component> cart;
     private String name;
 
-    public Customer(String name) {
-        this.name = name;
+    public Customer() {
         cart = new ArrayList<>();
     }
 
