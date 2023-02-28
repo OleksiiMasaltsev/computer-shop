@@ -1,15 +1,15 @@
 # computer-shop
 
-This program allows to construct and buy your own configuration of computer
+This program allows to construct and buy your own configuration of a computer,
 using its parts - components.
 
-All interaction occurs through console.
+All interaction occurs through the console.
 
 ## Functionality
  - interacting with the user through the console
- - displaying the list of available components
+ - displaying the list of available components in each group
  - making your chose and filling the customer's cart
- - calculating the total price of a components and buying
+ - calculating the total price of components and buying
  - customer's cart content removing from the shop storage
 
 ## Structure
@@ -18,7 +18,7 @@ All interaction occurs through console.
 - every component has its own unique fields and characteristics
 - Customer class holds the name and shopping cart as a list
 - Shop stores all the components and has methods to communicate with the user
-- ChatBot and ConsoleReader class help to interact with a customer
+- ConsoleReader class helps to interact with a customer
 
 ## Technologies
 - Java 17
