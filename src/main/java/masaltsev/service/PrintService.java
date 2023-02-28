@@ -55,6 +55,7 @@ public class PrintService {
 
     public void sayGoodbye() {
         System.out.println("\nGoodbye!");
+        ConsoleReader.close();
     }
 
     public void sayHello(String name) {

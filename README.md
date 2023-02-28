@@ -17,8 +17,9 @@ All interaction occurs through the console.
 - Component class has common fields (brand, model, price)
 - every component has its own unique fields and characteristics
 - Customer class holds the name and shopping cart as a list
-- Shop stores all the components and has methods to communicate with the user
-- ConsoleReader class helps to interact with a customer
+- ShopService stores all the components through dao layer and has methods to communicate with the user
+- program uses List to emulate working of DB
+- PrintService and ConsoleReader class help to interact with a customer
 
 ## Technologies
 - Java 17
