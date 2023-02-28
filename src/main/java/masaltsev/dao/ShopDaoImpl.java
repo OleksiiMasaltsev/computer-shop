@@ -13,16 +13,16 @@ public class ShopDaoImpl implements ShopDao {
 
     @Override
     public void save(Component component) {
-        storage.getComponents().add(component);
+        storage.components().add(component);
     }
 
     @Override
     public List<Component> getAll() {
-        return storage.getComponents();
+        return storage.components();
     }
 
     @Override
     public void remove(Component component) {
-        storage.getComponents().remove(component);
+        storage.components().remove(component);
     }
 }

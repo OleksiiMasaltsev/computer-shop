@@ -1,5 +1,6 @@
 package masaltsev;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import masaltsev.dao.ShopDao;
 import masaltsev.dao.ShopDaoImpl;
@@ -13,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         ShopDao shopDao = new ShopDaoImpl(new Storage(new LinkedList<>()));
         PrintService printService = new PrintService();
-        Customer customer = new Customer();
+        Customer customer = new Customer(new ArrayList<>());
         ShopService shopService = new ShopServiceImpl(customer, shopDao, printService);
         shopService.beginShopping();
     }

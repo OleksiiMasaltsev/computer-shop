@@ -6,18 +6,16 @@ import java.util.stream.IntStream;
 import masaltsev.util.ConsoleReader;
 
 public class PrintService {
-    public boolean isStart() {
+    public boolean askBegin() {
         System.out.print("\nHello! Are you ready to create your computer?"
                 + System.lineSeparator()
-                + "Yes - enter \"1\": ");
+                + "Enter \"1\" to continue: ");
         return ConsoleReader.readConsole().equals("1");
     }
 
-    public String askNameAndSayHello() {
-        System.out.println("\nWhat is your name?");
-        String name = ConsoleReader.readConsole();
-        System.out.println("\nHello, " + name + "!");
-        return name;
+    public String askName() {
+        System.out.println("\nWhat is your name? (not empty)");
+        return ConsoleReader.readConsole();
     }
 
     public String askComponentId(String componentType, List<String> componentList) {
@@ -27,25 +25,47 @@ public class PrintService {
         return ConsoleReader.readConsole();
     }
 
-    public void displayComponents(List<String> componentList) {
+    public void displayCart(List<String> componentList) {
+        if (componentList.isEmpty()) {
+            System.out.println("\nYour cart is empty.");
+        } else {
+            System.out.print("\nThe contents of your cart:");
+            displayComponents(componentList);
+        }
+    }
+
+    public void askRepeat() {
+        System.out.println("\nWrong input. Please, try again.");
+    }
+
+    public void displayPrice(BigDecimal price) {
+        System.out.println("\nTotal price of your computer is: " + price);
+    }
+
+    public boolean askContinue() {
+        System.out.println("\nDo you want to add more components?"
+                + System.lineSeparator()
+                + "Enter \"1\" to continue: ");
+        return ConsoleReader.readConsole().equals("1");
+    }
+
+    public void displayEmpty() {
+        System.out.println("\nThe shop storage is empty.");
+    }
+
+    public void sayGoodbye() {
+        System.out.println("\nGoodbye!");
+    }
+
+    public void sayHello(String name) {
+        System.out.println("\nHello, " + name + "!");
+    }
+
+    private void displayComponents(List<String> componentList) {
         System.out.println();
         IntStream.range(0, componentList.size())
                 .peek(i -> System.out.print(i + 1 + ": "))
                 .mapToObj(componentList::get)
                 .forEach(System.out::println);
-    }
-
-    public void displayCart(List<String> componentList) {
-        System.out.print("\nThe contents of your cart:");
-        displayComponents(componentList);
-    }
-
-    public void askRepeat() {
-        System.out.println("\nWrong input. Please try again.\n");
-    }
-
-    public void showPriceAndSayBye(BigDecimal price) {
-        System.out.println("\nTotal price of your computer is: " + price + "\nGood bye!");
-        ConsoleReader.close();
     }
 }

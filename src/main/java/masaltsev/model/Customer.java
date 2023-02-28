@@ -1,6 +1,5 @@
 package masaltsev.model;
 
-import java.util.ArrayList;
 import java.util.List;
 import masaltsev.model.component.Component;
 
@@ -8,8 +7,8 @@ public class Customer {
     private final List<Component> cart;
     private String name;
 
-    public Customer() {
-        cart = new ArrayList<>();
+    public Customer(List<Component> cart) {
+        this.cart = cart;
     }
 
     public String getName() {
