@@ -1,8 +1,7 @@
-package masaltsev.model;
+package masaltsev.db;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import masaltsev.model.component.Chassis;
 import masaltsev.model.component.Component;
@@ -11,63 +10,19 @@ import masaltsev.model.component.Graphics;
 import masaltsev.model.component.Motherboard;
 import masaltsev.model.component.Processor;
 import masaltsev.model.component.Ram;
-import masaltsev.util.ChatBot;
 
-public class Shop {
-    private final List<Component> storage;
+public class Storage {
+    private final List<Component> components;
 
-    public Shop() {
-        this.storage = new LinkedList<>();
-        fillStorage();
+    public Storage(List<Component> components) {
+        this.components = initDb(components);
     }
 
-    public List<Component> getStorage() {
-        return storage;
+    public List<Component> components() {
+        return components;
     }
 
-    public void beginShopping(Customer customer) {
-        List<String> componentTypes = storage.stream()
-                .map(component -> component.getClass().getSimpleName())
-                .distinct()
-                .toList();
-
-        for (String type : componentTypes) {
-            List<Component> components = storage.stream()
-                    .filter(component -> component.getClass().getSimpleName().equals(type))
-                    .toList();
-            int index;
-            while (true) {
-                String input = ChatBot.askComponentId(type,
-                        components.stream().map(Object::toString).toList());
-                try {
-                    index = Integer.parseInt(input) - 1;
-                } catch (NumberFormatException e) {
-                    ChatBot.askRepeat();
-                    continue;
-                }
-                if (index >= -1 && index < components.size()) {
-                    break;
-                }
-                ChatBot.askRepeat();
-            }
-            if (index != -1) {
-                Component component = components.get(index);
-                customer.getCart().add(component);
-                storage.remove(component);
-            }
-        }
-        ChatBot.displayList(customer.getCart().stream().map(Component::toString).toList());
-        ChatBot.showPriceAndSayBye(calculatePrice(customer));
-    }
-
-    public BigDecimal calculatePrice(Customer customer) {
-        return customer.getCart().stream()
-                .map(Component::getPrice)
-                .reduce(BigDecimal::add)
-                .orElse(BigDecimal.ZERO);
-    }
-
-    private void fillStorage() {
+    private List<Component> initDb(List<Component> components) {
         Chassis chassis1 = new Chassis("Deepcool", "mod1", Chassis.ChassisType.ATX,
                 BigDecimal.valueOf(14.56));
         Chassis chassis2 = new Chassis("Fractial Design", "mod2", Chassis.ChassisType.MINI_ITX,
@@ -109,11 +64,13 @@ public class Shop {
         Ram ram2 = new Ram("G.Skill", "mod2", 32000, Ram.RamType.DDR5, BigDecimal.valueOf(260));
         Ram ram3 = new Ram("Goodram", "mod3", 16000, Ram.RamType.DDR4, BigDecimal.valueOf(45));
 
-        storage.addAll(Arrays.asList(chassis1, chassis2, chassis3));
-        storage.addAll(Arrays.asList(disc1, disc2, disc3, disc4));
-        storage.addAll(Arrays.asList(graphics1, graphics2, graphics3, graphics4));
-        storage.addAll(Arrays.asList(motherboard1, motherboard2, motherboard3));
-        storage.addAll(Arrays.asList(processor1, processor2, processor3, processor4));
-        storage.addAll(Arrays.asList(ram1, ram2, ram3));
+        components.addAll(Arrays.asList(chassis1, chassis2, chassis3));
+        components.addAll(Arrays.asList(disc1, disc2, disc3, disc4));
+        components.addAll(Arrays.asList(graphics1, graphics2, graphics3, graphics4));
+        components.addAll(Arrays.asList(motherboard1, motherboard2, motherboard3));
+        components.addAll(Arrays.asList(processor1, processor2, processor3, processor4));
+        components.addAll(Arrays.asList(ram1, ram2, ram3));
+
+        return components;
     }
 }
