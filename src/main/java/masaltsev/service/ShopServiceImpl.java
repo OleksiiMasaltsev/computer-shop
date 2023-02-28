@@ -74,10 +74,14 @@ public class ShopServiceImpl implements ShopService {
             int index = getComponentIndex(typeName, filteredList);
             if (index != -1) {
                 Component component = filteredList.get(index);
-                customer.getCart().add(component);
-                components.remove(component);
+                moveFromShopToCart(component);
             }
         }
+    }
+
+    private void moveFromShopToCart(Component component) {
+        customer.getCart().add(component);
+        remove(component);
     }
 
     private int getComponentIndex(String type, List<Component> filteredList) {
